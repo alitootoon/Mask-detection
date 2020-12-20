@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from keras.models import load_model
-model=load_model("./model-010.h5")
+model=load_model("model.model")
 
 labels_dict={0:'without mask',1:'mask'}
 color_dict={0:(0,0,255),1:(0,255,0)}
@@ -10,7 +10,7 @@ size = 4
 webcam = cv2.VideoCapture(0) #Use camera 0
 
 # We load the xml file
-classifier = cv2.CascadeClassifier('/home/shivam/.local/lib/python3.6/site-packages/cv2/data/haarcascade_frontalface_default.xml')
+classifier = cv2.CascadeClassifier('/haarcascade_frontalface_default.xml')
 
 while True:
     (rval, im) = webcam.read()
